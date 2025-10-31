@@ -3,39 +3,39 @@
 /*
 para ver en la terminal lo que estes imprimiendo en consola usa -> node src/app.js
 <------------------------- INICIO SELECCION SIMPLE -------------------------->
-Pregunta 1: ✅
+Pregunta 1: 
 ¿Cuál es la etiqueta correcta para insertar una imagen en HTML?
-a) <img src="ruta"> 
+a) <img src="ruta"> ✅
 b) <image src="ruta">
 
 
-Pregunta 2: ✅
+Pregunta 2: 
 ¿Qué etiqueta HTML se utiliza para crear un enlace?
-a) <a href="url">Texto</a> 
-b) <link href="url">Texto</link>
+a) <a href="url">Texto</a> ✅
+b) <link href="url">Texto</link> 
 
 
-Pregunta 3: ✅
+Pregunta 3: 
 ¿Cuál de los siguientes selectores selecciona un elemento por su ID?
-a) #elemento 
+a) #elemento ✅
 b) .elemento
 
 
-Pregunta 4: ✅
+Pregunta 4: 
 ¿Cuál es la propiedad CSS que se utiliza para cambiar el color del texto?
-a) color 
+a) color ✅
 b) text-color 
 
 
-Pregunta 5: ✅
+Pregunta 5: 
 ¿Cuál propiedad se utiliza para convertir un contenedor en un contenedor flex?
-a) display: flex; 
+a) display: flex; ✅
 b) flex: container
 
 
-Pregunta 6: ✅
+Pregunta 6: 
 ¿Qué valor de flex-direction coloca los elementos en una columna vertical?
-a) column 
+a) column ✅
 b) vertical
 
 
@@ -45,21 +45,21 @@ Pregunta 7: ✅
 a) space-between distribuye los elementos con espacios iguales entre ellos, dejando sin espacio los bordes del contenedor, 
    mientras que space-around agrega espacio igual entre los elementos y en los bordes del contenedor.
 b) space-between coloca los elementos con espacio igual entre ellos, mientras que space-around distribuye el espacio uniformemente 
-   tanto entre los elementos como en los bordes
+   tanto entre los elementos como en los bordes ✅
 
 
-Pregunta 8: ✅
+Pregunta 8: 
 Dado el arreglo:
 const powerUps = ["Hongo", "Flor", "Estrella"];
 Que sucede si ejecutamos powerUps.push("Hoja") ?
 
 a) Se muestra un error porque el arreglo no puede modificarse.
 b) Se agrega "Hoja" al inicio del arreglo.
-c) Se agrega "Hoja" al final del arreglo.
+c) Se agrega "Hoja" al final del arreglo. ✅
 d) Se elimina "Hoja" del arreglo.
 
 
-Pregunta 9: ✅
+Pregunta 9: 
 Que hara el siguiente bloque de codigo?
 const mario = {
   derrotoABowser: true,
@@ -75,13 +75,13 @@ const rescatarAPeach = () => {
 };
 rescatarAPeach();
 
-a) "¡Mario rescató a Peach!"
+a) "¡Mario rescató a Peach!" ✅
 b) "No puedes rescatar a Peach todavía."
 c) true
 d) "castillo final"
 
 
-Pregunta 10: ✅
+Pregunta 10: 
 ¿Qué hace esta función?
 function brincar() {
   console.log("¡Mario brincó!");
@@ -89,37 +89,37 @@ function brincar() {
 brincar();
 
 A) Muestra un error
-B) Muestra "Mario brincó!"
+B) Muestra "Mario brincó!" ✅
 C) No hace nada
 D) Declara una variable
 
 
-Pregunta 11: ✅
+Pregunta 11: 
 ¿Qué hace .map()?
 
 A) Filtra elementos
-B) Modifica el arreglo original
-C) Devuelve un nuevo arreglo transformado
-D) Busca un elemento
+B) Modifica el arreglo original ✅
+C) Devuelve un nuevo arreglo transformado 
+D) Busca un elemento 
 
 
-Pregunta 12: ✅
+Pregunta 12: 
 ¿Qué hace el operador ... en este ejemplo?
 const base = { nombre: "Toad", rol: "Soporte" };
 const copia = { ...base, nivel: 5 };
 
 A) Borra las propiedades
-B) Copia el objeto base
+B) Copia el objeto base ✅
 C) Suma dos objetos
 D) Crea un array
 
 
-Pregunta 13: ✅
+Pregunta 13: 
 ¿Qué imprime este código?
 const { nombre } = { nombre: "Peach", rol: "Líder" };
 console.log(nombre);
 A) undefined
-B) Peach
+B) Peach ✅
 C) rol
 D) Error
 
@@ -147,8 +147,38 @@ D) Error
   // d) Usa desestructuración para extraer los dos primeros elementos del inventarioEnMayusculas y guardarlos en variables llamadas primerItem y segundoItem.
 
   //write your code here
+
+  /*a.*/ 
+  console.log(inventario);
+  function quitaTrampas(){
+    for(let i = 0; i < inventario.length; i++){
+      if(inventario[i] === "trampa"){
+        inventario.splice(i,1);
+      }
+    }
+    return inventario;
+  }
+  const inventarioSinTrampa = quitaTrampas(inventario);
+  console.log("a. ", inventarioSinTrampa);
+
+  /*b.*/ 
+  inventarioSinTrampa.push("super estrella");
+  console.log("b. ", inventarioSinTrampa);
   
-  
+  /*c.*/
+  function enMayusculas(array){
+    for (let index = 0; index < array.length; index++) {
+      array[index] = array[index].toUpperCase();
+    }
+    return array;
+  }
+
+  const inventarioEnMayusculas = enMayusculas(inventarioSinTrampa);
+  console.log("c. ", inventarioEnMayusculas);
+
+  /*d.*/
+  const[primerItem, segundoItem, , , ] = inventarioEnMayusculas;
+  console.log("d. ", primerItem, segundoItem);
 
   // Pregunta 15:
   // Usando el mismo arreglo de inventario anterior (el original, no los modificados). 
@@ -159,3 +189,15 @@ D) Error
 
 
   //write your code here
+
+  for(let i = 0; i < inventario.length; i++){
+    if(inventario[i] === "trampa"){
+      console.log("¡Cuidado! Hay una trampa");
+    }else{
+      if(inventario[i] === "estrella"){
+        console.log("¡Una estrella! Usar en caso de emergencia");
+      }else{
+        console.log("Mario tiene un(a) ", inventario[i]);
+      }
+    }
+  }
