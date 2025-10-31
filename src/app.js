@@ -150,15 +150,9 @@ D) Error
 
   /*a.*/ 
   console.log(inventario);
-  function quitaTrampas(){
-    for(let i = 0; i < inventario.length; i++){
-      if(inventario[i] === "trampa"){
-        inventario.splice(i,1);
-      }
-    }
-    return inventario;
-  }
-  const inventarioSinTrampa = quitaTrampas(inventario);
+  
+
+  const inventarioSinTrampa = inventario.filter((objeto) => { return objeto !== 'trampa';});
   console.log("a. ", inventarioSinTrampa);
 
   /*b.*/ 
@@ -166,14 +160,7 @@ D) Error
   console.log("b. ", inventarioSinTrampa);
   
   /*c.*/
-  function enMayusculas(array){
-    for (let index = 0; index < array.length; index++) {
-      array[index] = array[index].toUpperCase();
-    }
-    return array;
-  }
-
-  const inventarioEnMayusculas = enMayusculas(inventarioSinTrampa);
+  const inventarioEnMayusculas = inventario.map((item)=>{ return item.toUpperCase();});
   console.log("c. ", inventarioEnMayusculas);
 
   /*d.*/
